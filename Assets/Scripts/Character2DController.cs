@@ -40,15 +40,18 @@ Transform[] firePoints;
 [Range(0.1F, 1.0F)]
 float fireRate = 0.3F;
 
-
-
 [SerializeField]
 LayerMask enemyMask;
+
+[Header("Animation")]
+[SerializeField]
+Animator animator;
 
 
 Rigidbody2D _rb;
 
 Vector2 _direction;
+
 
 bool _isMoving;
 bool _isJumping;
@@ -104,6 +107,12 @@ void HandleInputs()
 
 void HandleMove()
 {
+    bool isMoving = animator.GetFloat("speed") > 0.01F;
+
+    if (_isMoving != isMoving && !_isJumping)
+    {
+        animator.SetFloat("speed", Mathf.Abs(_direction.x));
+    }
 
     Vector2 velocity = _direction * moveSpeed * Time.fixedDeltaTime;
     velocity.y = _rb.velocity.y;
