@@ -29,6 +29,17 @@ LayerMask groundMask;
 [SerializeField]
 float jumpGraceTime = 0.20F;
 
+[Header("Combat")]
+[SerializeField]
+GameObject bulletPrefab;
+
+[SerializeField]
+Transform[] firePoints;
+
+[SerializeField]
+[Range(0.1F, 1.0F)]
+float fireRate = 0.3F;
+
 
 
 [SerializeField]
@@ -47,6 +58,8 @@ bool _isJumpPressed;
 float _gravityY;
 float _lasTimeJumpPressed;
 
+float _fireTimer;
+
 
 protected override void Awake()
 {
@@ -60,6 +73,13 @@ protected override void Awake()
 void Update()
 {
     HandleInputs();
+
+            _fireTimer -= Time.deltaTime; 
+        if (Input.GetMouseButton(0) && _fireTimer <= 0.0F)
+        {
+            Shoot();
+            _fireTimer = fireRate;
+        }
 }
 
 void FixedUpdate()
@@ -141,6 +161,15 @@ bool IsGrounded()
     return Physics2D.OverlapCapsule(
         groundCheck.position, new Vector2(0.90F, 0.06F), 
         CapsuleDirection2D.Horizontal, 0.0F, groundMask);
+}
+
+
+void Shoot()
+{
+        foreach(Transform firePoint in firePoints)
+        {
+            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        }
 }
 
 
