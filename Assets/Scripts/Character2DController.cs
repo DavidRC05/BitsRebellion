@@ -168,7 +168,7 @@ void HandleJump()
 bool IsGrounded()
 {
     return Physics2D.OverlapCapsule(
-        groundCheck.position, new Vector2(0.90F, 0.06F), 
+        groundCheck.position, new Vector2(0.50F, 0.06F), 
         CapsuleDirection2D.Horizontal, 0.0F, groundMask);
 }
 
