@@ -154,12 +154,13 @@ void HandleJump()
         }
     }
 
-    if (_rb.velocity.y < -0.01F)
-    {
-        _rb.velocity -= Vector2.up * _gravityY * fallMultiplier * Time.fixedDeltaTime;
+    if (_rb.velocity.y < 0) // Only apply fallMultiplier when the player is actually falling
+        {
+            _rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.fixedDeltaTime;
     }
 
-    _isJumping = !IsGrounded();
+
+        _isJumping = !IsGrounded();
 
     bool isNegativeVelocityY = _rb.velocity.y < -0.1F;
 
