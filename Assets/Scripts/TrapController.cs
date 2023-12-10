@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class TrapController : MonoBehaviour
 {
-  
-    [SerializeField] 
+    [SerializeField]
     float damage = 10;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         // Verificar si el objeto que colisionó es el jugador
-        if (other.CompareTag("Player"))
+        if (collision.collider.CompareTag("Player"))
         {
             // Obtener el componente de salud del jugador
-            HealthBarController controller = other.GetComponent<HealthBarController>();
+            HealthBarController controller = collision.collider.GetComponent<HealthBarController>();
 
-            // Verificar si el jugador tiene un componente de salud
+            // Verificar si el jugador tiene un componente de salud 
             if (controller != null)
             {
                 // Causar daño al jugador
