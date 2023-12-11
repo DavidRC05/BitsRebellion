@@ -72,6 +72,10 @@ public class HealthController : MonoBehaviour
 
     public void Heal(float value)
     {
+        if (health + value >= 100)
+        {
+            value = 100 - health;
+        }
         health += Mathf.Abs(value);
         _healthBarController.OnHeal.Invoke(value);
     }
