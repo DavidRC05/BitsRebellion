@@ -11,10 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 1.unity
     guid: e76bade72c9170e498b54fc9b182f9b0
+<<<<<<< Updated upstream
   - enabled: 1
     path: Assets/Scenes/Level 2.unity
     guid: 6ca3cbf204b07b141879092279a0f58e
   - enabled: 0
     path: Assets/Scenes/Level.unity
     guid: 5c5904ed9e783a14fa1c54a47d2c89aa
+=======
+>>>>>>> Stashed changes
   m_configObjects: {}

@@ -88,6 +88,7 @@ public class Character2DController : MonoState<Character2DController>
         _fireTimer -= Time.deltaTime;
         if (Input.GetMouseButton(0) && _fireTimer <= 0.0F)
         {
+            AudioManager.Instance.PlaySFX("PlasmaSound", false);
             Shoot();
             _fireTimer = fireRate;
         }
