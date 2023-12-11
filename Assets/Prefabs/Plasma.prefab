@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5097215925427952108}
   m_Layer: 0
   m_Name: Plasma
-  m_TagString: Untagged
+  m_TagString: Plasma
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,6 +120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf8db5c86ac47e4d998adf3a3e1fa4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 10
+  lifeTime: 3
 --- !u!70 &5097215925427952108
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

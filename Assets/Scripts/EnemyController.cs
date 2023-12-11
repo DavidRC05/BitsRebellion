@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -9,11 +10,9 @@ public class EnemyController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("searching...");
 
         if (other.collider.CompareTag("Player"))
         {
-            Debug.Log("SE HIZO CONTACTO CON PLAYER");
             Vector2 contactPoint = other.GetContact(0).normal;
 
             if (contactPoint.y < -0.9F)
@@ -21,17 +20,15 @@ public class EnemyController : MonoBehaviour
                 Character2DController.Instance.Rebound();
                 Destroy(gameObject);
             }
-            else
-            {
-
-            }
-
-            Debug.Log("Llamado de TakeDamage");
             HealthController controller = other.collider.GetComponent<HealthController>();
-            controller.TakeDamage(damage, other.GetContact(0).normal);
-
+            if (controller != null)
+            {
+                controller.TakeDamage(damage, other.GetContact(0).normal);
+            }
+        }
+        else if (other.gameObject.CompareTag("Plasma"))
+        {
+            Destroy(gameObject); // Destruye el enemigo si es golpeado por una "bala" de plasma
         }
     }
 }
-
-

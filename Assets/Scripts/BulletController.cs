@@ -4,32 +4,39 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-        [SerializeField]
+    [SerializeField]
 
-        float speed = 10.0F;
+    float speed = 10.0F;
 
-        [SerializeField]
-        float lifeTime = 3.0F;
+    [SerializeField]
+    float lifeTime = 3.0F;
 
-        Rigidbody2D rb;
+    Rigidbody2D rb;
 
-        void Awake()
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    void Start()
+    {
+        Destroy(gameObject, lifeTime);
+    }
+
+    void FixedUpdate()
+    {
+        rb.velocity = transform.right * speed;
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-            rb = GetComponent<Rigidbody2D>();
+            Destroy(collision.gameObject); // Destruye el enemigo
         }
 
-        void Start()
-        {
-            Destroy(gameObject, lifeTime);
-        }
+        Destroy(gameObject); // Destruye la bala sin importar con qué colisionó
+    }
 
-        void FixedUpdate() 
-        {
-            rb.velocity = transform.right * speed;
-        }
 
-        void OnCollisionEnter2D(Collision2D collision)
-        {
-            Destroy(gameObject);
-        }
 }
