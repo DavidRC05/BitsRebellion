@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HealthController : MonoBehaviour
 {
@@ -58,7 +59,8 @@ public class HealthController : MonoBehaviour
         {
             Debug.Log("danio en health controller.");
             Destroy(gameObject);
-            return;
+            //SceneManager.LoadScene("Start");
+            //return;
         }
 
         //Podemos meter una animacion de hit

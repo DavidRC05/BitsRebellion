@@ -47,5 +47,9 @@ public void FirstScene()
         }
         SceneManager.LoadScene(currentScene - 1);
  }
+    public void ArthuroFunction()
+    {
+        SceneManager.LoadScene("Level 1");
+    }
 
 }
