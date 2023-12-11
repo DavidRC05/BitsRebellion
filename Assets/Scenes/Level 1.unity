@@ -804,6 +804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 3
   damage: 10
+  boss: 0
 --- !u!114 &161594669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1505,6 +1506,83 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1001 &568456460
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4176278152446518559, guid: 171efe88448306b4f935fab2599440ba, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4176278152446518559, guid: 171efe88448306b4f935fab2599440ba, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4176278152446518559, guid: 171efe88448306b4f935fab2599440ba, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4176278152446518559, guid: 171efe88448306b4f935fab2599440ba, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4176278152446518559, guid: 171efe88448306b4f935fab2599440ba, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4176278152446518559, guid: 171efe88448306b4f935fab2599440ba, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4176278152446518559, guid: 171efe88448306b4f935fab2599440ba, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4176278152446518559, guid: 171efe88448306b4f935fab2599440ba, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4176278152446518559, guid: 171efe88448306b4f935fab2599440ba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4176278152446518559, guid: 171efe88448306b4f935fab2599440ba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4176278152446518559, guid: 171efe88448306b4f935fab2599440ba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5062470120429900749, guid: 171efe88448306b4f935fab2599440ba, type: 3}
+      propertyPath: sounds.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5062470120429900749, guid: 171efe88448306b4f935fab2599440ba, type: 3}
+      propertyPath: sounds.Array.data[0].name
+      value: Theme
+      objectReference: {fileID: 0}
+    - target: {fileID: 5062470120429900749, guid: 171efe88448306b4f935fab2599440ba, type: 3}
+      propertyPath: sounds.Array.data[1].name
+      value: PlasmaSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 5062470120429900749, guid: 171efe88448306b4f935fab2599440ba, type: 3}
+      propertyPath: sounds.Array.data[0].sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4ed59a03dd3ddff4ab0baa512014d0de, type: 3}
+    - target: {fileID: 5062470120429900749, guid: 171efe88448306b4f935fab2599440ba, type: 3}
+      propertyPath: sounds.Array.data[1].sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 795e52945000124499f5cc05bbe69867, type: 3}
+    - target: {fileID: 5695032144230069062, guid: 171efe88448306b4f935fab2599440ba, type: 3}
+      propertyPath: m_Name
+      value: Audio Manager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 171efe88448306b4f935fab2599440ba, type: 3}
 --- !u!1 &573021691
 GameObject:
   m_ObjectHideFlags: 0
@@ -38754,6 +38832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 3
   damage: 10
+  boss: 0
 --- !u!114 &1089256494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39317,6 +39396,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 3
   damage: 10
+  boss: 0
 --- !u!114 &1288505549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39579,6 +39659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 3
   damage: 10
+  boss: 0
 --- !u!114 &1510160675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40288,6 +40369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 3
   damage: 10
+  boss: 0
 --- !u!114 &1722430872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40591,6 +40673,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 3
   damage: 10
+  boss: 0
 --- !u!1 &1853927285
 GameObject:
   m_ObjectHideFlags: 0
@@ -41444,6 +41527,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 3
   damage: 10
+  boss: 0
 --- !u!114 &2133562867
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -14,4 +14,9 @@ public class WelcomeController : MonoBehaviour
         LevelManager.Instance.NextScene();
 
     }
+
+    void Start()
+    {
+        AudioManager.Instance.PlayMusic("Theme");
+    }
 }
