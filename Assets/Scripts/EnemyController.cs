@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField]
@@ -10,6 +10,12 @@ public class EnemyController : MonoBehaviour
 
     [SerializeField]
     float damage = 10.0f;
+
+    [SerializeField]
+    bool boss = false;
+
+    //escenas
+    int sceneCount;
 
     void OnCollisionEnter2D(Collision2D other)
     {
@@ -35,6 +41,10 @@ public class EnemyController : MonoBehaviour
             if (life <= 0)
             {
                 Destroy(gameObject); // Destruye el enemigo si es golpeado por una "bala" de plasma
+                if (boss)
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                }
             }
         }
     }
