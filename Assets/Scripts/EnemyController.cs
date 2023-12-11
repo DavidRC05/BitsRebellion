@@ -6,6 +6,9 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField]
+    float life = 3.0F;
+
+    [SerializeField]
     float damage = 10.0f;
 
     void OnCollisionEnter2D(Collision2D other)
@@ -28,7 +31,11 @@ public class EnemyController : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Plasma"))
         {
-            Destroy(gameObject); // Destruye el enemigo si es golpeado por una "bala" de plasma
+            life -= 1;
+            if (life <= 0)
+            {
+                Destroy(gameObject); // Destruye el enemigo si es golpeado por una "bala" de plasma
+            }
         }
     }
 }
